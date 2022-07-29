@@ -13,6 +13,32 @@ class PadlockScreen extends StatefulWidget {
 class _PadlockScreenState extends State<PadlockScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: PatternLock(
+        selectedColor: Colors.purple,
+        notSelectedColor: Colors.black26,
+        dimension: 7,
+        pointRadius: 10,
+        fillPoints: true,
+        onInputComplete: (List<int> input) {
+          if (input.length < 4) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(
+                  "At least 4 points required",
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+            );
+            return;
+          }
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("pattern is " + input.toString()),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
