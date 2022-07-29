@@ -15,7 +15,7 @@ class _PadlockScreenState extends State<PadlockScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PatternLock(
-        selectedColor: Colors.purple, 
+        selectedColor: Colors.blue, 
         notSelectedColor: Colors.black26,
         dimension: 7,
         pointRadius: 10,
