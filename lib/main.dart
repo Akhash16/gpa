@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gpa/screens/blank_page.dart';
 import 'package:gpa/screens/padlock_screen.dart';
+import 'package:gpa/screens/shuffled_numbers_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: PadlockScreen.id,
+      initialRoute: ShuffledNumbers.id,
       routes: {
         BlankPage.id: (context) => const BlankPage(),
         PadlockScreen.id: (context) => const PadlockScreen(),
+        ShuffledNumbers.id: (context)=> const ShuffledNumbers(),
       },
     );
   }
